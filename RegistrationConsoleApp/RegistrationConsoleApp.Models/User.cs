@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RegistrationConsoleApp
+namespace RegistrationConsoleApp.Models
 {
     public class User
     {

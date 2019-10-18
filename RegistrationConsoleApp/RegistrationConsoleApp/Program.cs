@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistrationConsoleApp.Models;
+using System;
 using System.Collections.Generic;
 
 namespace RegistrationConsoleApp
@@ -7,13 +8,20 @@ namespace RegistrationConsoleApp
     {
         static void Main(string[] args)
         {
+            User me = new User();
+
+
             Console.WriteLine("Press 1 for Registration or 2 for Login!");
             string input = Console.ReadLine();
 
             switch (input)
             {
                 case "1":
-                    RegisterUser();
+                    Console.WriteLine("Username");
+                    string username = Console.ReadLine();
+                    Console.WriteLine("Password");
+                    string password = Console.ReadLine();
+                    RegisterUser(username,password);
                     break;
                 case "2":
                     LoginUser();
@@ -23,10 +31,7 @@ namespace RegistrationConsoleApp
                     break;
             }
 
-            //Console.WriteLine("Username");
-            //string username = Console.ReadLine();
-            //Console.WriteLine("Password");
-            //string password = Console.ReadLine();
+            
 
             //insert data in DB
             
@@ -48,9 +53,14 @@ namespace RegistrationConsoleApp
             }
         }
 
-        private static void RegisterUser()
+        private static void RegisterUser(string email,string password)
         {
-            throw new NotImplementedException();
+            User me = new User();
+            me.Email = email;
+            me.Password = password;
+            Console.WriteLine("Should be inserted in the database!");
+
+            //TODO : add user to db;
         }
     }
 }
