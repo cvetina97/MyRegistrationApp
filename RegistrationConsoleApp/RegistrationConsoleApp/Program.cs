@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace RegistrationConsoleApp
 {
@@ -6,7 +7,20 @@ namespace RegistrationConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            List<string> names = new List<string>()
+            {
+                "Zaiko Baiko ",
+                "Mecho Puh ",
+                "Daffy Duck"
+            };
+
+
+            foreach(var name in names)
+            {
+                Console.WriteLine(name);
+            }
+
+            
         }
     }
 }
